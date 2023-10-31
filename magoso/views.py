@@ -2,4 +2,4 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse('Hello Magoso Tech Academy')
+    return HttpResponse('Welcome to Magoso Tech Academy!')

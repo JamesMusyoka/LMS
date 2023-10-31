@@ -1,3 +1,4 @@
+import os
 """
 Django settings for LMS project.
 
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'magoso',
 ]
 
 MIDDLEWARE = [

@@ -1,11 +1,20 @@
 from django.db import models
 from django.contrib.auth.models import User
+import os
+
+def path_and_resume(instance, filename):
+    upload_to = 'Images/'
+    ext = filename.split('.')[-1]
+
+    if instance.user.username:
+        filename = 'User_Profile_Picture/{}.{}'.format(instance.user.username, ext)
+    return os.path.join(upload_to,filename)
 class user_profile(models.Model):
     user_id = models.CharField(max_length=50, unique=True)
     name = models.OneToOneField(User, on_delete=models.CASCADE)
     email = models.CharField(max_length=100, blank=True)
     bio = models.CharField(max_length=100, blank=True)
-    profile_pic = models.ImageField(upload_to=, blank=True)
+    profile_pic = models.ImageField(upload_to=path_and_resume, verbose_name="Profile Picture", blank=True)
 
     instructor = 'instructor'
     student = 'student'

@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.as
 class user(models.Model):
     user_id = models.CharField(max_length=50, unique=True)
     name = models.OneToOneField(User, on_delete=models.CASCADE)

@@ -1,6 +1,6 @@
 from django.db import models
-
-class user(models.Model):
+from django.contrib.auth.models import User
+class user_profile(models.Model):
     user_id = models.CharField(max_length=50, unique=True)
     name = models.OneToOneField(User, on_delete=models.CASCADE)
     email = models.CharField(max_length=100, blank=True)

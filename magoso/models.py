@@ -9,7 +9,7 @@ def path_and_resume(instance, filename):
     if instance.user.username:
         filename = 'User_Profile_Picture/{}.{}'.format(instance.user.username, ext)
     return os.path.join(upload_to,filename)
-class user_profile(models.Model):
+class User(models.Model):
     user_id = models.CharField(max_length=50, unique=True)
     name = models.OneToOneField(User, on_delete=models.CASCADE)
     email = models.CharField(max_length=100, blank=True)

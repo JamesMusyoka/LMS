@@ -6,7 +6,7 @@ def path_and_rename(instance, filename):
 	upload_to = 'Images/'
 	ext = filename.split('.')[-1]
 
-	if instance.user.username:
+	if instance.name.username:
 		filename = 'User_Profile_Pictures/{}.{}'.format(instance.name.username, ext)
 	return os.path.join(upload_to, filename)
 class UserProfile(models.Model):
@@ -14,7 +14,7 @@ class UserProfile(models.Model):
     name = models.OneToOneField(User, on_delete=models.CASCADE)
     email = models.CharField(max_length=100, blank=True)
     bio = models.CharField(max_length=100, blank=True)
-    profile_pic = models.ImageField(upload_to=path_and_rename, verbose_name="Profile Picture", blank=True)
+    profile_pic = models.ImageField(upload_to=path_and_rename, verbose_name="User Profile", blank=True)
 
     instructor = 'instructor'
     student = 'student'

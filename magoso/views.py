@@ -34,7 +34,7 @@ def register(request):
         user_form = UserForm()
         profile_form = UserProfile()
 
-    return render(request, 'mogoso/registration.html', {'registered':registered, 'user_form':user_form, 'profile_form':profile_form})
+    return render(request, 'magoso/registration.html', {'registered':registered, 'user_form':user_form, 'profile_form':profile_form})
 
 
 def user_login(request):
